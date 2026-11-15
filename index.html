@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0d0b0e">
+  <meta name="description" content="Obsession de possession — L'histoire interactive d'Hino, devenue Hinoenma. Lore, fiche RP, pouvoir sanguinaire et galerie.">
+  <title>Hinoenma | Obsession de possession</title>
+  <link rel="icon" href="assets/images/03.webp" type="image/webp">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="chapters.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="page-progress" id="page-progress"></div>
+  <header class="topbar" id="topbar">
+    <a class="brand" href="#accueil" aria-label="Retour au début"><span class="brand-glyph">縁</span><span>HINOENMA <small>飛縁魔</small></span></a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#histoire">Le récit</a>
+      <a href="#fiche">La fiche</a>
+      <a href="#pouvoirs">L'art sanguinaire</a>
+      <a href="#galerie">Souvenirs</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="cover" id="accueil" aria-labelledby="cover-title">
+      <div class="cover-bg" aria-hidden="true"></div>
+      <div class="cover-vein" aria-hidden="true"></div>
+      <div class="cover-copy reveal is-visible">
+        <p class="eyebrow"><span class="rose-dot">✿</span> Une tragédie démoniaque · Japon, 1605–1925</p>
+        <p class="cover-pretitle">L'histoire de celle qui voulait protéger la lumière</p>
+        <h1 id="cover-title">OBSESSION <span>DE</span><br>POSSESSION</h1>
+        <p class="cover-jp">飛縁魔 <span>—</span> ひのえんま</p>
+        <p class="cover-quote">« Aimer quelqu'un, n'est-ce pas ne jamais le laisser partir ? »</p>
+        <div class="cover-actions"><a href="#histoire" class="button primary" id="start-story">Entrer dans le récit <span aria-hidden="true">↘</span></a><a href="#fiche" class="button ghost">Découvrir Hinoenma</a></div>
+        <p class="cover-hint">Une histoire à lire… et à écouter. Laissez la musique vous accompagner.</p>
+      </div>
+      <div class="scroll-cue"><span>Faites défiler</span><i></i></div>
+      <span class="cover-corner cover-corner-a">陰</span><span class="cover-corner cover-corner-b">光</span>
+    </section>
+
+    <section class="prologue-band" aria-label="Prologue"><div class="prologue-inner"><span class="prologue-mark">❦</span><p>Elle était autrefois la propriété d'un homme.<br><em>Elle ferait un jour de l'humanité sa propre possession.</em></p><span class="prologue-mark">❦</span></div></section>
+
+    <section class="story" id="histoire" aria-labelledby="story-title">
+      <div class="section-head"><div><p class="eyebrow">De la lumière aux ténèbres</p><h2 id="story-title">Le récit</h2></div><p>La lumière promettait de tout sauver. Les ténèbres allaient lui apprendre à tout garder.</p></div>
+      <div class="reader-toolbar"><div class="reader-label">⟡ <span id="scene-counter">L’insouciance de la jeunesse</span></div><button type="button" class="text-button" id="toggle-reading-width">Élargir le texte ↔</button><button type="button" class="text-button" id="toggle-motion">Réduire les effets</button></div>
+      <div id="chapters"></div>
+      <div class="story-end"><span>終</span><h3>Et si l'amour ne savait plus s'arrêter ?</h3><p>La petite fille rêvait d’être aimée. La démone a appris à ne plus laisser personne partir.</p><div class="story-end-actions"><a class="button primary" href="#fiche">Lire sa fiche RP</a><a class="button ghost" href="#pouvoirs">Découvrir sa chasse</a></div></div>
+    </section>
+
+    <section class="dossier" id="fiche" aria-labelledby="fiche-title">
+      <div class="section-head"><div><p class="eyebrow">Archives du corps démoniaque</p><h2 id="fiche-title">Fiche de personnage</h2></div><p>Derrière son sourire, un amour immense. Derrière son amour, une prison.</p></div>
+      <div class="dossier-layout">
+        <div class="dossier-portrait"><img src="assets/images/03.webp" alt="Hinoenma, aux cheveux noirs, avec des ramifications sombres et des fleurs" loading="lazy"><div class="portrait-name">HINOENMA<small>« Celle qui voulait tout aimer »</small></div></div>
+        <div class="dossier-main">
+          <div class="status-line"><span class="outline-tag">Candidature</span><span>Rang laissé à l’appréciation de Frite et du staff — <strong>en attente de validation</strong></span></div>
+          <p class="frite-note">« Frite, je te laisse choisir mon rang, je prends TOUTES tes propositions, promis ! 😇 Juste un micro-détail, vraiment trois fois rien : j’aimerais transformer mes petits kidnappés en démons… Tu dois sûrement connaître les quelques sièges qui permettent ce genre de maternité, hein ? 👀 MAIS JE DIS ÇA, JE DIS RIEN ! Moi, je prépare juste les chambres des enfants. 😭🩸 »</p>
+          <div class="identity-grid">
+            <div><small>Nom démoniaque</small><strong>Hinoenma <span class="small-kanji">飛縁魔</span></strong></div>
+            <div><small>Prénom humain</small><strong>Hino</strong></div>
+            <div><small>Maison d'épouse</small><strong>Saionji</strong></div>
+            <div><small>Nature</small><strong>Démone</strong></div>
+            <div><small>Genre</small><strong>Féminin</strong></div>
+            <div><small>Naissance</small><strong>Vers 1588</strong></div>
+            <div><small>Transformation</small><strong>Hiver 1606 · 18 ans</strong></div>
+            <div><small>Ancienneté en 1925</small><strong>Environ 319 ans</strong></div>
+            <div><small>Rang envisagé</small><strong>Au choix de Frite / du staff</strong></div>
+            <div><small>Allégeance</small><strong>Kibutsuji Muzan</strong></div>
+            <div><small>Pouvoir sanguinaire</small><strong>Les Enfants du Jardin Noir</strong></div>
+            <div><small>Catégorie</small><strong>Détachement de sa chair</strong></div>
+            <div><small>Rôle personnel</small><strong>« Mère » de sa maisonnée</strong></div>
+            <div><small>Origine</small><strong>Japon · Début de l’époque d’Edo</strong></div>
+          </div>
+          <div class="dossier-quote">« Je ne veux pas les tuer. <em>Je veux les sauver.</em> »</div>
+        </div>
+      </div>
+      <div class="profile-sections">
+        <article class="profile-card profile-wide"><h3>Psychologie <small>Le cœur de la candidature</small></h3>
+          <p>Hinoenma est chaleureuse, expansive, affectueuse, extrêmement démonstrative. Elle sourit facilement, s'émeut sans retenue, complimente les personnes qu'elle rencontre et aime sincèrement les qualités qu'elle croit percevoir en elles. Cette tendresse n'est pas un masque : elle est réelle. C'est précisément ce qui la rend dangereuse.</p>
+          <p>Elle interprète l'intensité de sa propre affection comme une preuve que son désir est juste. Elle peut être incapable de distinguer la protection de la captivité, le réconfort de la contrainte, le dévouement du contrôle. Un refus ne lui apparaît pas comme une frontière légitime mais comme le symptôme d'une souffrance à guérir. Plus l'autre résiste, plus elle se convainc de devoir insister.</p>
+          <p>Elle adore ses « enfants » et ne supporte ni leur éloignement ni l'idée qu'ils choisissent une autre vie. Son affection se traduit par des soins, des cadeaux, des compliments, mais également par une surveillance intrusive et des restrictions qu'elle juge naturelles. Son comportement oscille entre mère aimante et geôlière inconsciente de sa propre cruauté.</p>
+          <p>Elle admire Muzan non comme un simple individu séduisant, mais comme l'incarnation d'une authenticité qu'elle croit absolue : ses ténèbres ne prétendent pas être lumière. Cette interprétation lui appartient ; elle ne garantit en rien que Muzan soit sincère ni qu'il partage ses sentiments. Son idéal pourrait devenir une prison même pour celui qu'elle vénère.</p>
+        </article>
+        <article class="profile-card"><h3>Qualités</h3><p>Attentionnée, persévérante, généreuse à sa façon, observatrice de la souffrance, courageuse lorsqu'elle protège ce qu'elle considère comme sa famille. Elle n'abandonne pas facilement une personne qu'elle estime précieuse.</p></article>
+        <article class="profile-card"><h3>Défauts</h3><p>Possessive, manipulatrice sans toujours se reconnaître telle, incapable d'accepter le consentement comme une limite absolue, jalouse, déstabilisée par le rejet et aveugle aux contradictions de son propre idéal.</p></article>
+        <article class="profile-card"><h3>Peur profonde</h3><p>Perdre une lumière qu'elle aurait pu « sauver ». Sa véritable terreur n'est pas seulement l'abandon : c'est de découvrir que sa présence elle-même détruit ceux qu'elle veut conserver.</p></article>
+        <article class="profile-card"><h3>Comportement en RP</h3><p>Elle propose avant d'imposer ; elle supplie avant de menacer ; elle enlace avant de retenir. Elle peut passer d'un rire lumineux à une crise de larmes, puis revenir à une douceur glaçante sans penser avoir changé de conduite.</p></article>
+        <article class="profile-card profile-wide"><h3>Apparence démoniaque</h3><p>Une élégance féminine d'inspiration japonaise, un teint clair et de longs cheveux sombres composent sa silhouette habituelle. Plusieurs altérations manifestement inhumaines la trahissent : ramifications noires évoquant des bois tortueux, floraisons sombres intégrées à sa chair, oreilles anormalement effilées et extrémités transformées en griffes. Son corps peut porter les marques organiques de son art sanguinaire.</p></article>
+        <article class="profile-card profile-wide"><h3>Histoire condensée</h3><p><b>1605–1606.</b> Hino, une jeune femme confiante et généreuse, est donnée en mariage au seigneur Saionji Takamasa. Elle découvre sa cruauté et son hypocrisie. Une nuit, un démon inconnu détruit le domaine ; elle voit en lui la perfection qu'elle cherchait. Muzan la transforme.</p><p><b>1607–1811.</b> Devenue Hinoenma, elle perd progressivement les souvenirs précis de son existence humaine mais conserve sa croyance en une « lumière » propre à chaque être. Elle gagne en expérience, en puissance et en responsabilités à travers des promotions successives. Elle n’a pas encore reçu le droit de transformer des humains.</p><p><b>1812.</b> Elle s'éprend de la lumière d'une chasseuse de démons redoutable. Rejetée et blessée, elle retourne auprès de Muzan. Il lui accorde une promotion décisive ainsi que le privilège de transformer des humains. Elle enlève alors la combattante et la transforme en démon : Kagari, sa première « fille ».</p><p><b>1925.</b> Sa maisonnée s'est agrandie. Entourée de Kagari, Shizuku et Tsubaki, Hinoenma décide de « sauver » les pourfendeurs en les enlevant puis, si le staff l'autorise, en les transformant. <a href="#histoire" class="inline-link">Lire le récit intégral ↗</a></p></article>
+        <article class="profile-card"><h3>Relations</h3><p><b>Muzan</b> — incarnation idéalisée de la perfection. <b>Kagari</b> — première fille, favorite, ancienne pourfendeuse. <b>Shizuku</b> — jeune éclaireuse enthousiaste. <b>Tsubaki</b> — protectrice plus pragmatique. Toutes trois sont des propositions de PNJ, à faire approuver.</p></article>
+        <article class="profile-card"><h3>Limites RP</h3><p>Soleil, glycine, lames Nichirin et malédiction de Muzan. Ses blessures demeurent possibles ; sa régénération n'efface pas les conséquences d'une situation déjà jouée. Toute capture, transformation ou perte de liberté durable nécessite l'accord des joueurs et du staff.</p></article>
+      </div>
+      
+    </section>
+
+    <section class="blood-art" id="pouvoirs" aria-labelledby="blood-title">
+      <div class="section-head"><div><p class="eyebrow">血鬼術 · Kekkijutsu</p><h2 id="blood-title">Les Enfants du Jardin Noir</h2></div><p>Un pouvoir conçu pour capturer, isoler et ramener les « lumières » que leur mère refuse de laisser partir.</p></div>
+      <div class="ability-hero"><img src="assets/images/12.webp" alt="Hinoenma domine un paysage dévasté au milieu des créatures de la nuit" loading="lazy"><div class="ability-overlay"><span class="outline-tag">Une seule catégorie</span><h3>La chair devient famille.</h3><p>Hinoenma détache des fragments de sa propre chair, gorgés de sang, et leur donne la forme de petits serviteurs organiques : des « enfants » de bois noir, de fleurs sombres et de membres démesurés. Ce ne sont ni des humains transformés, ni des démons autonomes. Ils restent des créations physiques, destructibles, commandées par leur mère.</p></div></div>
+      <div class="rules-row"><div><strong>Catégorie</strong><span>Détachement de chair pour créer / contrôler une autre entité</span></div><div><strong>Capacité proposée</strong><span>9 techniques (plafond Lune Supérieure)</span></div><div><strong>Objectif</strong><span>Repérage → interception → entrave → extraction</span></div></div>
+      <div class="balance-note"><h3>Règles de gameplay communes <span>Proposition à valider</span></h3><p><b>Quatre créatures actives maximum</b> à la fois ; les grandes en occupent deux ou trois. À titre de base de négociation : contrôle dans un rayon de 30 mètres, une action significative par invocation ou ordre complexe, créations affaiblies lorsque leur mère est grièvement touchée. Elles n'agissent pas à une vitesse supérieure à celle du rang autorisé, ne téléportent personne et ne prennent jamais le contrôle des pensées. Toute entrave peut être esquivée, rompue ou tranchée avec une arme adaptée.</p><p><b>Faiblesses :</b> perte de chair et de sang à l'invocation, capacité de régénération momentanément sollicitée, créations vulnérables aux lames Nichirin, à la glycine et au Soleil, limites de distance, de nombre et de concentration. Aucun « hit automatique » ni kidnapping imposé à un autre joueur.</p></div>
+      <div class="powers-grid" id="powers-grid"></div>
+      <div class="gameplay"><div class="gameplay-title"><p class="eyebrow">En pratique</p><h3>Comment Hinoenma kidnappe</h3><p>Tout commence par une attention délicate. Puis les chemins se referment…</p></div><div class="gameplay-stage"><span id="gameplay-num">01 / 05</span><h4 id="gameplay-step-title">Repérer</h4><p id="gameplay-step-body">Les Éclaireuses suivent discrètement une piste. Elles doivent réellement voir ou entendre la cible.</p><div class="gameplay-actions"><button class="button ghost" id="gameplay-prev" type="button">← Précédent</button><button class="button primary" id="gameplay-next" type="button">Étape suivante →</button></div></div></div>
+      <div class="easter-egg"><span class="badge-joke">BONUS HRP · PARODIE NON CANON</span><h3>Technique secrète n°??? — « Opération Frite : Livraison express »</h3><p>Quatre minuscules poupées débarquent avec un colis à l'adresse de Frite. Sur l'étiquette : <b>« Destinataire : Maman Hinoenma. Contenu : Frite. Retour à l'expéditeur interdit. »</b></p><button type="button" class="button ghost" id="frite-button">Activer la tentative de kidnapping</button><p class="joke-output" id="frite-output" aria-live="polite"></p><small>Blague du lore uniquement : aucun pouvoir supplémentaire, aucune action RP réelle, aucune technique au-delà des neuf autorisées.</small></div>
+      <div class="power-disclaimer">Le privilège de <b>transformer un humain en démon</b> est distinct de ce Kekkijutsu : il dépend du rang autorisé (Muzan, Première ou Deuxième Lune Supérieure) et des validations du serveur. Aucun « enfant » invoqué par ce pouvoir ne constitue un démon transformé.</div>
+    </section>
+
+    <section class="gallery" id="galerie" aria-labelledby="gallery-title"><div class="section-head"><div><p class="eyebrow">Les fragments d'une existence</p><h2 id="gallery-title">Souvenirs et mirages</h2></div><p>Des visages aimés, des instants perdus et des ombres qu’elle refuse de laisser disparaître.</p></div><div class="gallery-grid" id="gallery-grid"></div></section>
+
+    <section class="closing"><div class="closing-art" aria-hidden="true"></div><div class="closing-inner"><p class="eyebrow">Une promesse qui ne mourra jamais</p><h2>« Je vous aime… <em>tous.</em> »</h2><p>Hino → Hinoenma · Obsession de possession</p><a href="#accueil" class="button ghost">Revenir à la lumière ↑</a></div></section>
+  </main>
+
+  <footer class="footer"><span>❀ HINOENMA — OBSESSION DE POSSESSION</span><span>« Je vous garderai près de moi. Pour toujours. »</span><a href="#accueil">Retour en haut ↑</a></footer>
+
+  <aside class="music-player" id="music-player" aria-label="Lecteur musical">
+    <div class="player-vinyl" aria-hidden="true"><div class="vinyl-center">♪</div></div>
+    <div class="player-info"><small id="player-context">THÈME DE HINO</small><strong id="player-name">I Am — Hitomi</strong><span id="player-state">Musique en pause · Cliquez sur lecture</span></div>
+    <button class="player-control" id="player-prev" type="button" aria-label="Piste précédente">⏮</button><button class="player-control play" id="player-toggle" type="button" aria-label="Lancer la musique">▶</button><button class="player-control" id="player-next" type="button" aria-label="Piste suivante">⏭</button>
+    <label class="volume-wrap" aria-label="Volume de la musique">◖<input id="player-volume" type="range" min="0" max="100" value="52" aria-label="Volume"></label>
+    <label class="auto-wrap"><input type="checkbox" id="auto-scenes" checked><span>Auto-scènes</span></label>
+    <button class="player-expand" id="player-expand" type="button" aria-label="Afficher ou masquer la liste des pistes">⋯</button>
+    <div class="player-playlist" id="player-playlist" hidden>
+      <button type="button" data-track="hino">🌸 Hino — I Am (Hitomi)</button>
+      <button type="button" data-track="sesshomaru">🕯️ InuYasha OST — Sesshomaru</button>
+      <button type="button" data-track="evil">🩸 InuYasha OST — Evil Spirits</button>
+      <button type="button" data-track="inst">🕯️ CHANGGWI — Instrumental</button>
+      <button type="button" data-track="song">🩸 CHANGGWI — AHN YEEUN</button>
+    </div>
+  </aside>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie" hidden><button class="lightbox-close" id="lightbox-close" aria-label="Fermer">✕</button><button class="lightbox-nav previous" id="lightbox-prev" aria-label="Image précédente">‹</button><figure><img id="lightbox-image" alt=""><figcaption id="lightbox-caption"></figcaption></figure><button class="lightbox-nav next" id="lightbox-next" aria-label="Image suivante">›</button></div>
+</body>
+</html>
