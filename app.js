@@ -3,7 +3,20 @@
  'use strict';
  const $ = (selector, root=document) => root.querySelector(selector);
  const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
- const img = (n) => `assets/images/${String(n).padStart(2,'0')}.webp`;
+ // Versions empreintes des fichiers (générées automatiquement par versionner.py).
+ // Les fichiers inchangés restent en cache ; un fichier modifié reçoit une nouvelle URL.
+ const fileVersion = (url) => {
+   const hash = (window.HINO_ASSET_VERSIONS || {})[url];
+   return hash ? `${url}?v=${hash}` : url;
+ };
+ const stillImg = (n) => fileVersion(`assets/images/${String(n).padStart(2,'0')}.webp`);
+ const img = (n) => fileVersion(n === 18 ? 'assets/images/18-muzan-HD.webp' : `assets/images/${String(n).padStart(2,'0')}.webp`);
+ const chapterBgImg = (chapter) => (chapter && chapter.id === 'muzan' && chapter.images && chapter.images[0] === 18)
+   ? stillImg(18)
+   : img(chapter.images[0]);
+ const artBackdropImg = (chapter) => (chapter && chapter.id === 'muzan' && chapter.images && chapter.images[0] === 18)
+   ? stillImg(18)
+   : img(chapter.images[0]);
  const story = window.HINO_STORY || [];
  const audios = {
    hino: {name:'I Am — Hitomi', context:'HINO · L’ÂGE DE LA LUMIÈRE', url:'assets/audio/theme-hino.mp3'},
@@ -27,16 +40,16 @@
  }
  const prose = (text) => text.split(/\n\s*\n/).map(paragraph).join('');
  // Actual image ratios: no brutal square crop for portrait or cinematic compositions.
- const ratios = {1:[2048,1446],2:[2047,1401],3:[1744,1361],4:[2048,1311],5:[2048,1446],6:[2048,1446],7:[1906,2048],8:[2048,782],9:[2048,782],10:[1661,1051],11:[1661,1051],12:[2048,1170],13:[1447,2047],14:[1300,2048],15:[1373,1800],16:[1720,1217],17:[1157,1637],18:[2048,1434],19:[1414,1000]};
+ const ratios = {1:[2048,1446],2:[2047,1401],3:[1744,1361],4:[2048,1311],5:[2048,1446],6:[2048,1446],7:[1906,2048],8:[2048,782],9:[2048,782],10:[1661,1051],11:[1661,1051],12:[2048,1170],13:[1447,2047],14:[1300,2048],15:[1373,1800],16:[1720,1217],17:[1157,1637],18:[1280,712],19:[1414,1000]};
  function chapterMarkup(c, index){
    const n=c.images[0], ratio=(ratios[n]||[3,2]);
    const aspect=ratio[0]/ratio[1];
    const format=aspect>=2.05?'cinemascope':aspect<.85?'portrait':aspect<1.12?'near-square':'landscape';
-   const art = `<div class="art-backdrop" style="background-image:url('${img(n)}')" aria-hidden="true"></div><img class="art-image-main" src="${img(n)}" alt="${esc(c.title)}" loading="lazy">${c.images[1] ? `<img class="image-second" src="${img(c.images[1])}" alt="" loading="lazy">` : ''}<div class="art-grain" aria-hidden="true"></div><div class="art-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="art-corner tl" aria-hidden="true"></span><span class="art-corner br" aria-hidden="true"></span>`;
+   const art = `<div class="art-backdrop" style="background-image:url('${artBackdropImg(c)}')" aria-hidden="true"></div><img class="art-image-main" src="${img(n)}" alt="${esc(c.title)}" loading="lazy">${c.images[1] ? `<img class="image-second" src="${img(c.images[1])}" alt="" loading="lazy">` : ''}<div class="art-grain" aria-hidden="true"></div><div class="art-orbit" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="art-corner tl" aria-hidden="true"></span><span class="art-corner br" aria-hidden="true"></span>`;
    const prev = index>0 ? `<a href="#${story[index-1].id}">← ${esc(story[index-1].title)}</a>` : '<span></span>';
    const next = index<story.length-1 ? `<a href="#${story[index+1].id}">${esc(story[index+1].title)} →</a>` : '<a href="#fiche">Voir la fiche →</a>';
    return `<section class="chapter kind-${esc(c.kind)} art-${format}" id="${esc(c.id)}" data-track="${c.track}" data-index="${index}">
-     <div class="chapter-bg" style="background-image:url('${img(n)}')" aria-hidden="true"></div>
+     <div class="chapter-bg" style="background-image:url('${chapterBgImg(c)}')" aria-hidden="true"></div>
      <div class="chapter-inner"><div class="chapter-head">
        <div class="chapter-heading reveal"><span class="chapter-roman">${esc(c.roman)}</span><span class="chapter-date">${esc(c.period)}</span><h3 class="chapter-title">${esc(c.title)}</h3><p class="chapter-subtitle">${esc(c.subtitle)}</p></div>
        <figure class="chapter-art ${c.transition || ''} reveal" style="--art-aspect:${ratio[0]} / ${ratio[1]}">${art}</figure>
@@ -109,13 +122,13 @@
    if(!unlocked || !playing){if(activeAudio){safePause(activeAudio);activeAudio=null}playerUI();return;}
    if(fadeTimer){clearInterval(fadeTimer);fadeTimer=null}
    if(fadingFrom){safePause(fadingFrom);fadingFrom=null}
-   const old=activeAudio;fadingFrom=old;const fresh=new Audio(audios[key].url);fresh.loop=true;fresh.preload='auto';fresh.volume=0;activeAudio=fresh;
+   const old=activeAudio;fadingFrom=old;const fresh=new Audio(fileVersion(audios[key].url));fresh.loop=true;fresh.preload='auto';fresh.volume=0;activeAudio=fresh;
    safePlay(fresh);
    let start=performance.now();let duration=1500;
    fadeTimer=setInterval(()=>{const k=Math.min(1,(performance.now()-start)/duration);try{fresh.volume=Math.max(0,Math.min(1,k*desiredVol));if(old)old.volume=Math.max(0,Math.min(1,(1-k)*desiredVol));}catch(_){}if(k>=1){clearInterval(fadeTimer);fadeTimer=null;safePause(old);if(fadingFrom===old)fadingFrom=null;}},35);
    state.textContent='Transition cinématographique entre les thèmes';
  }
- function play(){unlocked=true;playing=true;if(!activeAudio){activeAudio=new Audio(audios[activeKey].url);activeAudio.loop=true;activeAudio.preload='auto';activeAudio.volume=desiredVol;}safePlay(activeAudio);playerUI();state.textContent='Lecture continue · Thème lié aux scènes';}
+ function play(){unlocked=true;playing=true;if(!activeAudio){activeAudio=new Audio(fileVersion(audios[activeKey].url));activeAudio.loop=true;activeAudio.preload='auto';activeAudio.volume=desiredVol;}safePlay(activeAudio);playerUI();state.textContent='Lecture continue · Thème lié aux scènes';}
  function pause(){playing=false;safePause(activeAudio);if(fadingFrom){safePause(fadingFrom);fadingFrom=null;}if(fadeTimer){clearInterval(fadeTimer);fadeTimer=null}playerUI();}
  toggle.addEventListener('click',()=>playing?pause():play());
  const useTrack = (key,manual=false)=>{if(manual)$('#auto-scenes').checked=false;fadeTo(key)};

@@ -33,3 +33,34 @@ Evil Spirits : La révélation → Muzan → Deux siècles à conquérir la nuit
 CHANGGWI instrumental : Sa lumière était si belle
 CHANGGWI chanté : Je te veux → Mon seigneur ? → Désormais tu m’appartiendras
 I Am : Désormais tu m’appartiens → Je vous veux, TOUS !
+
+MISE A JOUR MUZAN HD
+----------------------
+L'illustration de Muzan (reference 18) est maintenant animee.
+Le site charge assets/images/18-muzan-HD.webp (animation 1280 x 712).
+Une version GIF HD est egalement fournie : assets/images/18-muzan-HD.gif.
+L'image d'origine etait en 640 x 356 : la version HD est un agrandissement
+avec amelioration de la nettete, pas une recreation de details inexistants.
+
+
+VERSIONNEMENT AUTOMATIQUE POUR GITHUB PAGES — V7
+--------------------------------------------------
+Pour publier une modification (texte, image, musique, CSS, etc.) :
+1. Modifie tes fichiers normalement.
+2. Sous Windows, double-clique sur PREPARER_PUBLICATION.bat.
+3. Publie les fichiers modifies dans ton depot GitHub (GitHub Desktop : Commit puis Push).
+4. Quand GitHub Pages a fini son deploiement, recharge le site.
+
+Ce script utilise uniquement Python 3. Il ajoute une empreinte du CONTENU
+aux URLs (ex. style.css?v=...), sans renommer les fichiers.
+Les nouvelles versions d'images, de musiques, de chapitres et de code sont
+rechargees, tandis que les fichiers inchanges profitent du cache.
+
+Il est sans risque de relancer le script plusieurs fois : sans changement,
+les numeros de version restent identiques.
+
+IMPORTANT : Si tu modifies directement les fichiers dans le navigateur GitHub,
+ce script local ne s'execute pas automatiquement sur le serveur.
+Dans ce cas, utilise GitHub Desktop pour publier la version preparee,
+ou il faudra mettre en place GitHub Actions pour automatiser cette etape.
+Un deploiement GitHub Pages peut aussi prendre quelques minutes.
