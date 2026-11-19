@@ -211,3 +211,17 @@ body.motion-off .chapter-art.reveal,body.motion-off .chapter-art.reveal.is-visib
   .chapter.kind-blood .story-prose::before,
   .chapter.kind-blood .story-prose::after{width:180px;height:170px}
 }
+
+/* V9 — précisions mineures demandées par le MJ : délais & durée des entraves */
+.summon-rule{margin-top:14px!important;padding-top:12px;border-top:1px solid rgba(212,158,150,.22)}
+.summon-time{color:#f4d1bf!important;background:rgba(131,48,66,.17);border-left:2px solid #c98882;padding:7px 11px;font:.77rem/1.5 'Segoe UI',Arial,sans-serif;letter-spacing:.025em}
+.duration-panel{max-width:1210px;margin:0 auto 22px;padding:24px clamp(20px,3vw,36px);border:1px solid rgba(217,173,153,.28);background:linear-gradient(115deg,#2b141e,#151218);color:#f1ded6}
+.duration-panel h3{font:400 clamp(1.55rem,2.7vw,2.2rem) Georgia,serif;color:#f8e0d2;margin:0 0 10px}
+.duration-panel p{font:.91rem/1.72 'Segoe UI',Arial,sans-serif;color:#e7d1cc;text-shadow:0 1px 10px #000}
+.duration-scroll{overflow-x:auto}
+.duration-panel table{width:100%;border-collapse:collapse;font:.83rem/1.6 'Segoe UI',Arial,sans-serif;min-width:470px}
+.duration-panel th,.duration-panel td{padding:10px 13px;text-align:left;border-bottom:1px solid rgba(237,197,179,.16)}
+.duration-panel th{background:rgba(180,82,91,.17);color:#f1d2c7}
+.duration-panel tr:nth-child(3){background:rgba(198,147,111,.14)}
+.duration-panel .duration-hint{font-size:.82rem;margin:13px 0 0;color:#dac2be}
+@media(max-width:700px){.duration-panel{margin:0 20px 20px;padding:20px 16px}}
