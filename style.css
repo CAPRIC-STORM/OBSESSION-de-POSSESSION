@@ -275,3 +275,51 @@ body.motion-off .daughter-card:hover{transform:none!important}
 .daughter-rank{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:-8px 0 25px!important;padding:0 0 18px;border-bottom:1px solid rgba(255,255,255,.075);font-family:'Segoe UI',Arial,sans-serif!important;line-height:1.45!important}
 .daughter-rank span{font-size:.63rem;color:var(--d-accent);font-weight:750;letter-spacing:.18em;text-transform:uppercase}
 .daughter-rank strong{font-size:.76rem;font-weight:600;color:#f0dfd4;text-shadow:0 2px 13px #000}
+
+/* V16 — Arts des poupées d’élite et des filles */
+.power-card-elite{grid-column:1/-1;background:linear-gradient(135deg,rgba(53,29,47,.95),rgba(19,17,25,.98));}
+.elite-portraits{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px;margin:18px 0 23px;max-width:900px;align-self:center;width:100%;}
+.elite-portraits figure{margin:0;position:relative;aspect-ratio:3/4;overflow:hidden;background:rgba(12,10,18,.8);border:1px solid rgba(215,166,188,.26);box-shadow:0 15px 35px rgba(0,0,0,.24);}
+.elite-portraits img{display:block;width:100%;height:100%;object-fit:contain;transition:transform .7s ease;}
+.elite-portraits figure:hover img{transform:scale(1.035)}
+.daughter-portrait{margin:0;position:relative;min-height:220px;height:300px;display:flex;align-items:center;justify-content:center;overflow:hidden;z-index:1;border-bottom:1px solid rgba(255,255,255,.07);background:radial-gradient(ellipse at 50% 30%,var(--d-glow),transparent 70%),rgba(9,9,13,.43);}
+.daughter-portrait img{display:block;width:100%;height:100%;object-fit:contain;object-position:center;filter:drop-shadow(0 12px 18px rgba(0,0,0,.3));transition:transform .7s ease;}
+.daughter-portrait:hover img{transform:scale(1.025)}
+.daughter-portrait--shizuku{height:275px;}
+@media (max-width:700px){.elite-portraits{gap:9px}.daughter-portrait{height:300px}.daughter-portrait--shizuku{height:245px}}
+@media (prefers-reduced-motion:reduce){.elite-portraits img,.daughter-portrait img{transition:none}}
+
+
+/* V17 — Kagari : même duo de peintures que dans son chapitre (06 → 05).
+   Sa forme finale est l'image 05. Les autres portraits et le chapitre restent inchangés. */
+.daughter-portrait--kagari{
+  height:300px;min-height:300px;
+  background:radial-gradient(ellipse at 50% 45%,rgba(124,151,174,.18),transparent 80%),#14121a;
+}
+.daughter-portrait--kagari img{
+  position:absolute;inset:0;display:block;width:100%;height:100%;
+  object-fit:contain;object-position:center;
+  filter:drop-shadow(0 10px 22px rgba(0,0,0,.18));
+  transition:none;
+}
+.daughter-portrait--kagari .kagari-form-original{opacity:1;}
+.daughter-portrait--kagari .kagari-form-final{
+  opacity:0;animation:picture-crossfade 13s ease-in-out infinite alternate;
+}
+.daughter-portrait--kagari:hover img{transform:none;}
+@media(max-width:1040px) and (min-width:701px){
+  .daughter-kagari .daughter-portrait--kagari{
+    height:100%;min-height:340px;border-bottom:0;
+    border-right:1px solid rgba(255,255,255,.07);
+  }
+}
+@media(max-width:700px){
+  .daughter-kagari .daughter-portrait--kagari{
+    min-height:250px;height:300px;border-right:0;
+    border-bottom:1px solid rgba(255,255,255,.07);
+  }
+}
+@media(prefers-reduced-motion:reduce){
+  .daughter-portrait--kagari .kagari-form-final{animation:none;opacity:1;}
+}
+body.motion-off .daughter-portrait--kagari .kagari-form-final{opacity:1!important;}

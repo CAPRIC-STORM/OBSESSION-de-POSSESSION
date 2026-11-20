@@ -1,5 +1,5 @@
 {
-  "release": "V7-e8d66f9e0f92",
+  "release": "V7-a8ab901c2510",
   "files": {
     "assets/audio/theme-changgwi-inst.mp3": "1b381c568915",
     "assets/audio/theme-changgwi.mp3": "a5802a1a69f2",
@@ -14,6 +14,8 @@
     "assets/images/06.webp": "6cbdf945e3a2",
     "assets/images/07.webp": "4dbf66fc1ace",
     "assets/images/08.webp": "ba61748d2d47",
+    "assets/images/09-1.jpg": "a457acfa51a9",
+    "assets/images/09-2.jpg": "5a16d6e82c3a",
     "assets/images/09.webp": "30d7dddb154c",
     "assets/images/10.webp": "1b36409a5c3d",
     "assets/images/11.webp": "fed1d9ba7b97",
@@ -27,8 +29,10 @@
     "assets/images/18-muzan-HD.webp": "4f4a8539ab26",
     "assets/images/18.webp": "8fe7a8b34390",
     "assets/images/19.webp": "3b6d3ea384af",
-    "style.css": "db35c7b17803",
+    "assets/images/Shizuku.jpg": "58b0ebf88137",
+    "assets/images/Tsubaki.jpg": "e46ad4f4617f",
+    "style.css": "0caa3552cb91",
     "chapters.js": "175f137d4d9c",
-    "app.js": "1184feb7efa3"
+    "app.js": "1a2af98eea13"
   }
 }

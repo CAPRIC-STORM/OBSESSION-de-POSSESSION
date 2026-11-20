@@ -129,7 +129,11 @@
     counter:'Ces poupées sont de véritables corps de chair : une lame Nichirin peut les blesser ou les détruire. Un adversaire capable de rompre leur cercle, de les séparer ou d’en abattre une peut perturber leur attaque concertée. Leur puissance vient aussi de leur coordination ; elles ne bénéficient pas de l’expérience personnelle de leur mère.'
   }
  ];
- $('#powers-grid').innerHTML = abilities.map((a,i)=>`<article class="power-card"><div class="power-number">${String(i+1).padStart(2,'0')}</div><span class="power-class">${esc(a.sub)}</span><h3>${esc(a.name)}</h3><p class="summon-time">⏳ Invocation : <b>${a.prep} ${a.prep===1?'tour':'tours'}</b> </p><p>${esc(a.text)}</p><div class="power-impact"><b>En combat :</b> ${esc(a.impact)}</div><div class="power-counter"><b>${esc(a.slots)}</b><br><b>Pour lui faire face :</b> ${esc(a.counter)}</div></article>`).join('');
+ const eliteArt = `<div class="elite-portraits" aria-label="Apparence des poupées de l’Adoption Forcée">
+   <figure><img src="${fileVersion('assets/images/09-1.jpg')}" alt="Poupée ultime aux longs cheveux clairs et fleurs violettes" loading="lazy" decoding="async"></figure>
+   <figure><img src="${fileVersion('assets/images/09-2.jpg')}" alt="Poupée ultime à la chevelure noire et cornes ramifiées" loading="lazy" decoding="async"></figure>
+ </div>`;
+ $('#powers-grid').innerHTML = abilities.map((a,i)=>`<article class="power-card${i===8?' power-card-elite':''}"><div class="power-number">${String(i+1).padStart(2,'0')}</div><span class="power-class">${esc(a.sub)}</span><h3>${esc(a.name)}</h3><p class="summon-time">⏳ Invocation : <b>${a.prep} ${a.prep===1?'tour':'tours'}</b> </p><p>${esc(a.text)}</p>${i===8?eliteArt:''}<div class="power-impact"><b>En combat :</b> ${esc(a.impact)}</div><div class="power-counter"><b>${esc(a.slots)}</b><br><b>Pour lui faire face :</b> ${esc(a.counter)}</div></article>`).join('');
  const phases = [
   ['Repérer','Les Éclaireuses observent les chemins, puis reviennent indiquer à leur mère la direction et les dangers rencontrés. Elles peuvent être repérées ou détruites avant leur retour.'],
   ['Couper les issues','Les Deux Sœurs tournent autour de la cible, griffent et feintent pour lui fermer progressivement les issues. Un large mouvement de katana peut briser leur formation.'],
