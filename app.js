@@ -82,9 +82,9 @@
   },
   {
     name:'Les Petites Mains', sub:'Interception', slots:'1 emplacement · une poupée agile', prep:1,
-    text:'Cette poupée de 50 cm court, bondit sur les obstacles et se jette au contact. Elle cherche une cheville au moment d’une esquive, un poignet pendant une frappe ou le bras qui tient le sabre. Ses griffes peuvent aussi entailler une cible trop occupée à surveiller Hinoenma.',
-    impact:'Sur un mouvement bref, elle peut rivaliser avec la vivacité de sa mère. Une prise réussie perturbe le geste visé selon le barème d’entrave. Elle ne peut retenir sa cible au-delà de sa durée d’action ou de l’effet autorisé.',
-    counter:'Elle frappe vite mais ne serre pas aussi fort qu’une grande invocation. Un mouvement précis peut lui arracher sa prise ou la repousser ; sa petite carcasse résiste mal à une coupe de Nichirin.'
+    text:'Haute de 50 cm et pesant environ 7 kg, cette poupée traverse le terrain en courant, saute sur un obstacle puis bondit vers sa cible. Elle agrippe physiquement une cheville pendant une esquive, un poignet au départ d’une frappe ou le bras qui manie le sabre. Ses petits doigts de chair se referment avec force, ses griffes accrochent le tissu ou la peau, et elle se suspend en tirant de tout son corps. Elle peut aussi lacérer ce qu’elle parvient à atteindre.',
+    impact:'La cible sent d’abord une prise brusque, puis le poids mobile de la poupée qui se balance et tire par à-coups. À la cheville, elle alourdit l’appui et peut faire dévier un pas ou briser le rythme d’une esquive ; au poignet, ses tractions peuvent désaxer une frappe ou gêner la tenue du sabre. Sa vivacité sur de courtes distances rivalise avec celle d’Hinoenma. Si l’agrippement réussit, la gêne suit le barème général d’entrave.',
+    counter:'La poupée doit réellement atteindre sa cible pour s’accrocher. On peut l’esquiver, l’arracher, la heurter contre un obstacle ou couper le membre qui retient la prise. Sa petite taille la rend rapide, mais son corps résiste mal à une coupe de Nichirin.'
   },
   {
     name:'Les Deux Sœurs', sub:'Encerclement et harcèlement', slots:'2 emplacements · deux silhouettes', prep:1,
