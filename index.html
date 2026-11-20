@@ -7,17 +7,17 @@
   <meta name="description" content="Obsession de possession — L'histoire interactive d'Hino, devenue Hinoenma. Lore, fiche RP, pouvoir sanguinaire et galerie.">
   <title>Hinoenma | Obsession de possession</title>
   <!-- HINO-VERSIONS-START -->
-  <meta name="site-version" content="V7-a8ab901c2510">
+  <meta name="site-version" content="V7-3a7e69a76b3f">
   <script>
-    window.HINO_RELEASE = 'V7-a8ab901c2510';
+    window.HINO_RELEASE = 'V7-3a7e69a76b3f';
     window.HINO_ASSET_VERSIONS = {"assets/audio/theme-changgwi-inst.mp3":"1b381c568915","assets/audio/theme-changgwi.mp3":"a5802a1a69f2","assets/audio/theme-evil-spirits.mp3":"e9e9500a5d22","assets/audio/theme-hino.mp3":"44491dde8db5","assets/audio/theme-sesshomaru.mp3":"ad69ff34fcf1","assets/images/01.webp":"86c6243ee0a1","assets/images/02.webp":"aea7d1a73d36","assets/images/03.webp":"d49c7a01cd3f","assets/images/04.webp":"6dc9602c1bcf","assets/images/05.webp":"93e7f645530f","assets/images/06.webp":"6cbdf945e3a2","assets/images/07.webp":"4dbf66fc1ace","assets/images/08.webp":"ba61748d2d47","assets/images/09-1.jpg":"a457acfa51a9","assets/images/09-2.jpg":"5a16d6e82c3a","assets/images/09.webp":"30d7dddb154c","assets/images/10.webp":"1b36409a5c3d","assets/images/11.webp":"fed1d9ba7b97","assets/images/12.webp":"3e1d65d7748a","assets/images/13.webp":"e1169f7e44a6","assets/images/14.webp":"90eb04966d07","assets/images/15.webp":"3b84c2e943c4","assets/images/16.webp":"abd9047be6f1","assets/images/17.webp":"de7f760a963b","assets/images/18-muzan-HD.gif":"c40040cedbc6","assets/images/18-muzan-HD.webp":"4f4a8539ab26","assets/images/18.webp":"8fe7a8b34390","assets/images/19.webp":"3b6d3ea384af","assets/images/Shizuku.jpg":"58b0ebf88137","assets/images/Tsubaki.jpg":"e46ad4f4617f"};
   </script>
   <!-- HINO-VERSIONS-END -->
 
 <link rel="icon" href="assets/images/03.webp?v=d49c7a01cd3f" type="image/webp">
-  <link rel="stylesheet" href="style.css?v=0caa3552cb91">
+  <link rel="stylesheet" href="style.css?v=fc1e478d33ad">
   <script defer src="chapters.js?v=175f137d4d9c"></script>
-  <script defer src="app.js?v=1a2af98eea13"></script>
+  <script defer src="app.js?v=d7fd40535c50"></script>
 </head>
 <body>
   <div class="cursor-glow" aria-hidden="true"></div>
@@ -125,7 +125,18 @@
         <p class="duration-hint">Avec le MJ, on compare les rangs des pourfendeurs par équivalence de puissance. Ces durées sont les plafonds d’une prise qui a réellement réussi, et non une réussite assurée. Une cible peut rompre l’étreinte plus tôt, notamment en coupant la créature qui la tient. Si elle s’est libérée, il faut réussir une nouvelle saisie pour la retenir. Les griffures et les coups restent des blessures physiques, pas des entraves qui se prolongent.</p></div>
       <div class="powers-grid" id="powers-grid"></div>
       <div class="gameplay"><div class="gameplay-title"><p class="eyebrow">En pratique</p><h3>Comment Hinoenma kidnappe</h3><p>Tout commence par une attention délicate. Puis les chemins se referment…</p></div><div class="gameplay-stage"><span id="gameplay-num">01 / 05</span><h4 id="gameplay-step-title">Repérer</h4><p id="gameplay-step-body">Les Éclaireuses suivent discrètement une piste. Elles doivent réellement voir ou entendre la cible.</p><div class="gameplay-actions"><button class="button ghost" id="gameplay-prev" type="button">← Précédent</button><button class="button primary" id="gameplay-next" type="button">Étape suivante →</button></div></div></div>
-      <div class="easter-egg"><span class="badge-joke">DOSSIER ULTRA SECRET · FRITE</span><h3>KIDNAPING ! — Opération Frite</h3><p>Quatre minuscules poupées débarquent avec un colis à l’adresse de Frite. Sur l’étiquette : <b>« Destinataire : Maman Hinoenma. Contenu : Frite. Retour à l’expéditeur interdit. »</b></p><p><b>« FRIIIIITE ! ♡ Ton adoption a été approuvée ! J’ai déjà préparé ta chambre ! »</b></p><button type="button" class="button ghost" id="frite-button">DÉCLENCHER LE KIDNAPPING ! ♡</button><p class="joke-output" id="frite-output" aria-live="polite"></p></div>
+      <div class="easter-egg frite-protocol" id="kidnaping-frite">
+        <span class="badge-joke">✦ 10ᵉ TECHNIQUE SANGUINAIRE · DOSSIER FRITE ✦</span>
+        <span class="frite-stamp" aria-hidden="true">ADOPTION<br>APPROUVÉE ♡</span>
+        <h3>KIDNAPING ! <span>— Le Grand Rapt de Frite ♡</span></h3>
+        <p>Lorsqu'une certaine Frite rôde près du Jardin Noir, Hinoenma peut déployer son plus redoutable protocole maternel : quatre minuscules poupées vêtues comme des employées d'une maison d'adoption débarquent à toute vitesse. La première déroule un tapis rose. La deuxième apporte un bouquet. La troisième sort un gigantesque sac en velours. La quatrième brandit un acte d'adoption tamponné d'un cœur.</p>
+        <p>Le piège parfait se referme alors… Hinoenma surgit derrière sa future enfant, les bras tendus, le sourire rayonnant.</p>
+        <p class="frite-quote">« FRIIIIITE ! ♡ Tu tombes bien ! J'ai fini de décorer ta chambre ! Viens, maman te kidnappe ! »</p>
+        <p><strong>Effet :</strong> les poupées lancent une opération d'enlèvement d'une précision absolument ridicule : rubans roses, filet à papillons, paquet-cadeau géant et pluie de pétales. Si Frite esquive, le dispositif déclenche son arme secrète : un plateau de pâtisseries et une pancarte <em>« CÂLINS GRATUITS »</em>.</p>
+        <p class="frite-fineprint"><b>N.B. :</b> Cette technique ne peut être utilisée que lorsque <b>Frite se trouve dans les parages</b>. Son activation est strictement réservée aux <b>professionnels qualifiés du kidnapping affectif</b>, titulaires du diplôme « Maman certifiée, spécialité adoption surprise ». Tout stagiaire devra présenter une attestation de câlins avant de toucher au sac.</p>
+        <button type="button" class="button ghost frite-trigger" id="frite-button">DÉCLENCHER LE KIDNAPING ! ♡</button>
+        <p class="joke-output" id="frite-output" aria-live="polite"></p>
+      </div>
       <div class="power-disclaimer">Les « enfants » invoqués ne sont pas des démons transformés : ce sont des créations physiques de chair. La transformation d’humains mentionnée dans son histoire est un privilège distinct de ce Kekkijutsu.</div>
     </section>
 

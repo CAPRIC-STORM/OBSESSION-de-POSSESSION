@@ -145,8 +145,21 @@
  function renderPhase(){ $('#gameplay-num').textContent=`${String(phase+1).padStart(2,'0')} / 05`;$('#gameplay-step-title').textContent=phases[phase][0];$('#gameplay-step-body').textContent=phases[phase][1];$('#gameplay-prev').disabled=phase===0;$('#gameplay-next').textContent=phase===4?'Recommencer ↻':'Étape suivante →'; }
  $('#gameplay-prev').addEventListener('click',()=>{phase=Math.max(0,phase-1);renderPhase()});
  $('#gameplay-next').addEventListener('click',()=>{phase=(phase+1)%phases.length;renderPhase()});renderPhase();
- let jokes=['📦 Livraison confirmée : Frite a refusé de signer le bon de réception.','🩸 Hinoenma : « Ce n’est pas un enlèvement, c’est une adoption surprise ! »','✅ AUTORISATION EXCEPTIONNELLE ACCORDÉE PAR FRITE LUI-MÊME. Le kidnapping est désormais une affaire de famille !','🌸 Frite a fui. Les poupées ont rapporté une frite en carton. Hinoenma est inconsolable.'];let j=0;
- $('#frite-button').addEventListener('click',()=>{$('#frite-output').textContent=jokes[j++%jokes.length]});
+ const friteReactions = [
+   '🌸 FRITE REPÉRÉE ! Le protocole « GROS CÂLIN » passe en priorité absolue.',
+   '📜 ACTE D’ADOPTION TAMPONNÉ. La signature de Frite a été remplacée par un joli cœur.',
+   '📦 LIVRAISON EN COURS : quatre poupées transportent un sac qui crie « MÊME PAS PEUR ! ».',
+   '🩸 FRITE S’EST ÉCHAPPÉE ! Hinoenma active le plan B : un filet à papillons et des pâtisseries.',
+   '💌 MESSAGE DE MAMAN : « Reviens, Frite ! Tu n’as même pas encore rencontré tes sœurs ! ♡ »'
+ ];
+ let friteStep = 0;
+ $('#frite-button').addEventListener('click', () => {
+   const panel = $('.frite-protocol');
+   $('#frite-output').textContent = friteReactions[friteStep++ % friteReactions.length];
+   panel.classList.remove('frite-activated');
+   void panel.offsetWidth;
+   panel.classList.add('frite-activated');
+ });
 
  const captions = {1:'Deux êtres, une obsession',2:'Je te veux',3:'Je vous veux, TOUS !',4:'Mon seigneur ?',5:'Une lumière nouvelle',6:'La naissance de la famille',7:'L’éternité entre les mains',8:'L’éclat d’une âme',9:'L’ombre sous la pluie',10:'Je t’ai retrouvée',11:'Tu ne m’échapperas plus',12:'Deux siècles à conquérir la nuit',13:'Chaînes et souvenirs',14:'La beauté monstrueuse',15:'Automne — Hino',16:'Le sacrifice — Hino',17:'L’insouciance — Hino',18:'La révélation — Muzan',19:'Le seigneur Saionji Takamasa'};
  $('#gallery-grid').innerHTML=Array.from({length:19},(_,index)=>{const i=index+1;return `<figure class="gallery-card" role="button" tabindex="0" data-img="${i}" aria-label="Voir : ${esc(captions[i])}"><img loading="lazy" src="${img(i)}" alt="${esc(captions[i])}"><figcaption><span>${esc(captions[i])}</span></figcaption></figure>`}).join('');
