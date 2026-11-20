@@ -1,5 +1,5 @@
 {
-  "release": "V7-768175294b71",
+  "release": "V7-aeb36c8cf6d9",
   "files": {
     "assets/audio/theme-changgwi-inst.mp3": "1b381c568915",
     "assets/audio/theme-changgwi.mp3": "a5802a1a69f2",
@@ -29,6 +29,6 @@
     "assets/images/19.webp": "3b6d3ea384af",
     "style.css": "2afe26b6b475",
     "chapters.js": "175f137d4d9c",
-    "app.js": "b8c3b2d97387"
+    "app.js": "db9d9fcf4783"
   }
 }
