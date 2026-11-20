@@ -237,3 +237,41 @@ body.motion-off .chapter-art.reveal,body.motion-off .chapter-art.reveal.is-visib
 .power-impact b{color:#f8d8c7;}
 .power-counter{font-size:.80rem;line-height:1.7;}
 @media(max-width:700px){.power-impact{padding:12px 11px;}.power-card .summon-time{font-size:.72rem;}}
+
+
+/* LA MAISONNÉE — three daughters, distinct from the blood-art puppets */
+.children-section{position:relative;isolation:isolate;padding:115px 0 125px;overflow:hidden;background:linear-gradient(180deg,#0d0b0f 0%,#1b121a 46%,#0e0b11 100%);border-top:1px solid rgba(202,140,136,.2);border-bottom:1px solid rgba(215,174,153,.16)}
+.children-ambient{position:absolute;inset:-15% -5%;z-index:-1;pointer-events:none;opacity:.72;background:radial-gradient(ellipse at 49% 16%,rgba(157,67,82,.24),transparent 48%),radial-gradient(ellipse at 7% 61%,rgba(120,67,88,.14),transparent 47%),radial-gradient(ellipse at 95% 68%,rgba(193,138,100,.11),transparent 40%)}
+.children-section::before,.children-section::after{content:'❀';position:absolute;pointer-events:none;color:rgba(175,93,109,.09);font:400 clamp(8rem,24vw,26rem) Georgia,serif;z-index:-1}.children-section::before{top:0;right:-3%;transform:rotate(-13deg)}.children-section::after{bottom:4%;left:-4%;transform:rotate(23deg)}
+.children-heading{align-items:end;margin-bottom:10px}.children-heading h2{color:#f5e3d8}.children-heading>p{color:#d6bebb;max-width:410px;line-height:1.8}
+.children-intro{display:flex;align-items:center;justify-content:center;gap:24px;max-width:900px;margin:8px auto 52px;padding:24px 33px;border-top:1px solid rgba(203,151,145,.2);border-bottom:1px solid rgba(203,151,145,.2);color:#f2d9cd;text-align:center}
+.children-intro .intro-flower{color:#be7f80;font-size:2rem}.children-intro p{font:italic clamp(1.1rem,1.8vw,1.38rem)/1.8 Georgia,serif;margin:0;text-shadow:0 2px 12px #000}
+.children-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;max-width:1260px;padding:0 34px;margin:auto;align-items:stretch}
+.daughter-card{--d-accent:#cc9890;--d-glow:rgba(191,106,116,.18);position:relative;display:flex;flex-direction:column;overflow:hidden;min-width:0;border:1px solid rgba(221,166,151,.21);background:linear-gradient(153deg,rgba(53,33,41,.92),rgba(18,15,21,.97) 56%,rgba(26,18,27,.98));box-shadow:0 20px 65px rgba(0,0,0,.23);transition:border-color .35s ease,transform .35s ease,box-shadow .35s ease}
+.daughter-card:hover{border-color:var(--d-accent);transform:translateY(-7px);box-shadow:0 22px 62px rgba(0,0,0,.43),0 0 42px var(--d-glow)}
+.daughter-card::before{content:'';position:absolute;inset:0 0 auto;height:54%;pointer-events:none;background:radial-gradient(ellipse at 50% 25%,var(--d-glow),transparent 62%);z-index:0}
+.daughter-kagari{--d-accent:#efc7a0;--d-glow:rgba(207,147,108,.23);border-color:rgba(229,187,137,.4)}
+.daughter-tsubaki{--d-accent:#db99af;--d-glow:rgba(198,99,135,.17)}
+.daughter-shizuku{--d-accent:#a7c4cd;--d-glow:rgba(111,151,173,.18)}
+.daughter-card-top{display:flex;justify-content:space-between;align-items:center;padding:18px 23px;border-bottom:1px solid rgba(255,255,255,.06);position:relative;z-index:1}
+.daughter-order{display:flex;gap:10px;align-items:center;font:400 1.6rem Georgia,serif;color:var(--d-accent)}.daughter-order span{font:600 .67rem 'Segoe UI',Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#e6cbc4}
+.daughter-ornament{font:400 1.3rem Georgia,serif;color:var(--d-accent);opacity:.75}
+.daughter-monogram{min-height:169px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;z-index:1;border-bottom:1px solid rgba(255,255,255,.07)}
+.daughter-monogram::before,.daughter-monogram::after{content:'';position:absolute;width:145px;height:145px;border:1px solid var(--d-accent);border-radius:50%;opacity:.24}.daughter-monogram::after{width:110px;height:110px;opacity:.32;transform:rotate(30deg);border-style:dashed}
+.daughter-monogram span{font-size:4rem;font-weight:400;color:var(--d-accent);text-shadow:0 0 29px var(--d-glow);transform:rotate(-5deg)}
+.daughter-card-body{position:relative;z-index:1;padding:28px 29px 35px;flex:1}
+.daughter-epithet{font:italic .93rem Georgia,serif;color:var(--d-accent)!important;margin-bottom:6px}
+.daughter-card h3{font:400 clamp(2.45rem,3.6vw,3.7rem)/1.05 Georgia,serif;letter-spacing:-.04em;color:#f7e7da;margin:0 0 19px}
+.daughter-standing{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 0 25px;padding:11px 0;border-top:1px solid rgba(255,255,255,.11);border-bottom:1px solid rgba(255,255,255,.11);color:#ecd7cd}
+.daughter-standing span{font:600 .7rem 'Segoe UI',Arial,sans-serif;letter-spacing:.055em}.daughter-standing i{font-style:normal;white-space:nowrap;color:var(--d-accent);letter-spacing:.09em;font-size:.8rem}
+.daughter-card-body>p:not(.daughter-epithet){font:400 1.02rem/1.79 Georgia,serif;color:#e0d0c8;margin:0 0 17px;text-shadow:0 1px 12px rgba(0,0,0,.45)}.daughter-card-body em{color:#f4dacb}.daughter-card-body>p:last-child{margin-bottom:0}
+.children-closing{text-align:center;max-width:890px;margin:46px auto 0;padding:28px 24px 0;border-top:1px solid rgba(204,149,139,.24)}.children-closing>span{font-size:2rem;color:#bd9291}.children-closing p{font:400 1rem/1.8 Georgia,serif;color:#d4bebb;margin:10px 0}.children-closing strong{color:#f5ded1;font-weight:600}.children-closing .children-last-words{font-style:italic;color:#cba29e;margin-top:19px}
+@media(max-width:1040px){.children-grid{grid-template-columns:1fr 1fr}.daughter-kagari{grid-column:span 2;display:grid;grid-template-columns:42% 58%}.daughter-kagari .daughter-card-top{grid-column:1 / -1}.daughter-kagari .daughter-monogram{min-height:100%;border-bottom:0;border-right:1px solid rgba(255,255,255,.07)}.daughter-kagari .daughter-card-body{padding:30px}.daughter-kagari .daughter-monogram span{font-size:5rem}}
+@media(max-width:700px){.children-section{padding:80px 0 90px}.children-intro{margin:15px 20px 32px;padding:18px 12px;gap:11px}.children-intro .intro-flower{font-size:1.35rem}.children-grid{grid-template-columns:1fr;padding:0 20px;gap:16px}.daughter-kagari{grid-column:auto;display:flex}.daughter-kagari .daughter-monogram{min-height:169px;border-right:0;border-bottom:1px solid rgba(255,255,255,.07)}.daughter-card-top{padding:15px 18px}.daughter-card-body,.daughter-kagari .daughter-card-body{padding:25px 23px 30px}.children-closing{margin:31px 22px 0}.daughter-card:hover{transform:none}}
+@media(prefers-reduced-motion:reduce){.daughter-card:hover{transform:none}}
+body.motion-off .daughter-card:hover{transform:none!important}
+
+/* Rangs des trois filles : une progression lisible, sans fiche de combat artificielle. */
+.daughter-rank{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:-8px 0 25px!important;padding:0 0 18px;border-bottom:1px solid rgba(255,255,255,.075);font-family:'Segoe UI',Arial,sans-serif!important;line-height:1.45!important}
+.daughter-rank span{font-size:.63rem;color:var(--d-accent);font-weight:750;letter-spacing:.18em;text-transform:uppercase}
+.daughter-rank strong{font-size:.76rem;font-weight:600;color:#f0dfd4;text-shadow:0 2px 13px #000}
