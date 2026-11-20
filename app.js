@@ -146,11 +146,11 @@
  $('#gameplay-prev').addEventListener('click',()=>{phase=Math.max(0,phase-1);renderPhase()});
  $('#gameplay-next').addEventListener('click',()=>{phase=(phase+1)%phases.length;renderPhase()});renderPhase();
  const friteReactions = [
-   '🌸 FRITE REPÉRÉE ! Le protocole « GROS CÂLIN » passe en priorité absolue.',
-   '📜 ACTE D’ADOPTION TAMPONNÉ. La signature de Frite a été remplacée par un joli cœur.',
-   '📦 LIVRAISON EN COURS : quatre poupées transportent un sac qui crie « MÊME PAS PEUR ! ».',
-   '🩸 FRITE S’EST ÉCHAPPÉE ! Hinoenma active le plan B : un filet à papillons et des pâtisseries.',
-   '💌 MESSAGE DE MAMAN : « Reviens, Frite ! Tu n’as même pas encore rencontré tes sœurs ! ♡ »'
+   '🌸 FRITE REPÉRÉE ! Les fleurs s’ouvrent, la porte se ferme… et Hinoenma sourit beaucoup trop.',
+   '💌 INVITATION ACCEPTÉE (selon Hinoenma). Le billet de retour est curieusement introuvable. ♡',
+   '📦 LIVRAISON EN COURS : le sac en velours gigote. Quelqu’un à l’intérieur exige des explications.',
+   '🩸 FRITE S’EST ÉCHAPPÉE ! « Oh ? Alors c’est une partie de cache-cache… Comme c’est adorable. ♡ »',
+   '🌙 MESSAGE PRIVÉ : « Frite, mon cœur… La prochaine fois, je fermerai les fenêtres aussi. ♡ »'
  ];
  let friteStep = 0;
  $('#frite-button').addEventListener('click', () => {
