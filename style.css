@@ -225,3 +225,15 @@ body.motion-off .chapter-art.reveal,body.motion-off .chapter-art.reveal.is-visib
 .duration-panel tr:nth-child(3){background:rgba(198,147,111,.14)}
 .duration-panel .duration-hint{font-size:.82rem;margin:13px 0 0;color:#dac2be}
 @media(max-width:700px){.duration-panel{margin:0 20px 20px;padding:20px 16px}}
+
+
+/* Clarifications de la fiche validée — durées propres et contre-jeu des neuf invocations */
+@media(min-width:1000px){.powers-grid{grid-template-columns:repeat(2,minmax(0,1fr));}}
+.power-card{min-height:0;display:flex;flex-direction:column;}
+.power-card p{color:#e0cbc7;}
+.power-card .summon-time{margin:0 0 17px;color:#fbe6d4!important;background:rgba(121,44,58,.3);border-left:3px solid #d69b8b;padding:9px 12px;}
+.power-divider{padding:0 8px;color:#c69f98;}
+.power-impact{font:.83rem/1.65 'Segoe UI',Arial,sans-serif;color:#ebd8cd;background:rgba(67,45,56,.28);border-left:2px solid #bda09a;padding:13px 15px;margin-top:auto;margin-bottom:14px;}
+.power-impact b{color:#f8d8c7;}
+.power-counter{font-size:.80rem;line-height:1.7;}
+@media(max-width:700px){.power-impact{padding:12px 11px;}.power-card .summon-time{font-size:.72rem;}}

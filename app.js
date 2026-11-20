@@ -74,29 +74,74 @@
  });
 
  const abilities = [
-  {name:'Les Éclaireuses',sub:'Reconnaissance',slots:'1 emplacement · petites créatures',prep:1,text:'De petits êtres de chair en forme de fleurs rampantes s’échappent de ses mains. Ils épient les chemins, repèrent les passages et reviennent lui transmettre ce qu’ils ont physiquement vu ou entendu.',counter:'Aucune vision magique, aucun pistage infaillible : ils peuvent être surpris, écrasés ou repérés.'},
-  {name:'Les Petites Mains',sub:'Interception',slots:'1 emplacement · une créature agile',prep:1,text:'Une poupée de chair se jette sur un poignet, une cheville ou une arme pour gêner un mouvement. Sa tâche est d’ouvrir une occasion de saisie, pas de paralyser automatiquement.',counter:'Force et précision limitées : l’adversaire peut esquiver, arracher l’emprise ou trancher le serviteur.'},
-  {name:'Les Deux Sœurs',sub:'Encerclement',slots:'2 emplacements · deux créatures',prep:1,text:'Deux silhouettes filiformes se déplacent en tandem pour pousser la proie à reculer vers un passage défavorable. Elles alternent feintes corporelles et tentatives de prise.',counter:'Elles doivent courir et se positionner réellement. Une attaque de zone ou un terrain ouvert gêne leur coopération.'},
-  {name:'Le Berceau d’Épines',sub:'Entrave',slots:'2 emplacements · une créature volumineuse',prep:2,text:'Une poupée à bras ramifiés tente d’envelopper une personne dans une étreinte de chair et de ronces organiques. Le « berceau » sert à maintenir une cible déjà affaiblie.',counter:'La capture exige un contact contestable. Des Nichirin peuvent couper les bras ; la créature est lente et vulnérable aux attaques ciblées.'},
-  {name:'La Grande Sœur',sub:'Protection',slots:'2 emplacements · gardienne robuste',prep:2,text:'Une protectrice plus massive apparaît près d’Hinoenma pour intercepter une attaque physique et couvrir sa retraite avec un captif.',counter:'Elle n’encaisse pas indéfiniment. Sa masse la rend lente ; l’invoquer empêche de mobiliser plusieurs autres enfants.'},
-  {name:'Le Cortège du Retour',sub:'Extraction',slots:'2 emplacements · deux porteuses',prep:1,text:'Deux servantes de chair transportent ensemble un captif ou un objet encombrant. Leur rôle est de franchir une courte distance pendant que la mère protège la retraite.',counter:'Aucune téléportation ni vol : transport ralenti, trajectoire visible, poursuite et interruption possibles.'},
-  {name:'Les Pétales du Sacrifice',sub:'Diversion physique',slots:'1 emplacement · une créature sacrificielle',prep:1,text:'Une créature se déchire volontairement en fragments de chair noire et de pétales pour gêner brièvement une trajectoire ou amortir une frappe. Les fragments perdent rapidement toute mobilité.',counter:'Pas d’illusion, de poison ni d’attaque explosive ; un usage ponctuel qui consume entièrement l’invocation.'},
-  {name:'La Veillée Noire',sub:'Tenue de position',slots:'3 emplacements · sentinelle fixe',prep:2,text:'Une grande silhouette à membres ancrés s’installe devant une issue pour la défendre pendant qu’une autre création conduit la proie vers l’extérieur.',counter:'Installation lente, déplacements difficiles et contournement possible. Elle est incapable de modifier la structure du bâtiment.'},
-  {name:'L’Adoption Forcée',sub:'Ultime tentative de capture',slots:'4 emplacements · déploiement maximal',prep:2,text:'Quatre enfants de chair se coordonnent dans une unique manœuvre d’encerclement et de saisie. La mère vise une capture, pas une mise à mort. La manœuvre exige une préparation et une cible atteignable.',counter:'Très coûteux en chair et en concentration : aucune autre invocation en parallèle, interruption possible, aucun résultat imposé.'}
+  {
+    name:'Les Éclaireuses', sub:'Reconnaissance', slots:'1 emplacement · jusqu’à 3 éclaireuses', prep:1, lifetime:'6 tours',
+    text:'Jusqu’à trois petites créatures de chair en forme de fleurs rampantes (10 à 15 cm) s’échappent de ses mains. Elles se déplacent au sol ou grimpent sur des supports, épient chemins et passages, puis reviennent jusqu’à Hinoenma. Elles transmettent leurs observations par gestes, mouvements des pétales et petits sons qu’elle sait interpréter : pas de télépathie ni d’images transmises à distance.',
+    impact:'Repérage uniquement : aucune immobilisation, attaque ou détection surnaturelle. Les renseignements exigent leur retour physique dans le rayon de contrôle.',
+    counter:'Elles sont discrètes, mais fragiles : on peut les remarquer, les suivre, les écraser ou les trancher. Si elles sont détruites avant de revenir, leur rapport est perdu.'
+  },
+  {
+    name:'Les Petites Mains', sub:'Interception', slots:'1 emplacement · une poupée agile', prep:1, lifetime:'3 tours',
+    text:'Une poupée d’environ 50 cm se forme près d’Hinoenma, puis court et bondit physiquement jusqu’à la cible. Elle cherche à agripper un poignet, une cheville ou une arme pour dévier un geste, et peut égratigner avec ses griffes lors d’une ouverture. Elle n’est ni un projectile, ni une paralysie à distance.',
+    impact:'Chaque prise doit toucher et suivre le barème général des entraves ; elle peut cesser avant. La poupée reste présente trois tours au maximum, mais une prise ne dure pas automatiquement trois tours.',
+    counter:'Esquive, déplacement, mouvement de katana, arrachage de l’emprise ou coupe de ses bras. Elle est beaucoup moins résistante que les grandes invocations.'
+  },
+  {
+    name:'Les Deux Sœurs', sub:'Encerclement et harcèlement', slots:'2 emplacements · deux silhouettes', prep:1, lifetime:'3 tours',
+    text:'Deux silhouettes filiformes d’environ 1,20 m courent sur le terrain pour encercler une proie. L’une feinte ou tente une prise pendant que l’autre cherche une ouverture pour frapper de ses griffes. Elles se coordonnent autour d’une manœuvre offensive par tour plutôt que d’obtenir chacune un tour de combat complet de même niveau que leur mère.',
+    impact:'Leurs griffures peuvent blesser, sans reproduire toute la puissance d’Hinoenma. Une saisie réussie suit le barème général. Elles mettent la pression par le nombre et les angles, pas par une force équivalente à deux Lunes Supérieures supplémentaires.',
+    counter:'Attaque de zone ou large mouvement de katana atteignant leur trajectoire, terrain dégagé, séparation du duo. Une lame Nichirin bien placée peut les détruire ; elles ne bloquent pas automatiquement une technique de souffle.'
+  },
+  {
+    name:'Le Berceau d’Épines', sub:'Entrave', slots:'2 emplacements · une créature volumineuse', prep:2, lifetime:'2 tours',
+    text:'Une poupée d’environ 2 m déploie de longs bras ramifiés pour entourer une cible déjà affaiblie. Les « ronces » sont des membres de chair qui serrent et compriment ; elles ne transpercent pas automatiquement. Une fois la prise obtenue, le berceau maintient la cible le temps d’une immobilisation contestable afin qu’Hinoenma puisse approcher ou organiser son enlèvement.',
+    impact:'Durée de prise = la plus courte entre le barème général et le temps restant avant désintégration du Berceau. Aucune prison permanente, aucune mise hors combat garantie ; la pression peut gêner les mouvements sans tuer automatiquement.',
+    counter:'Couper des bras avec une Nichirin, viser le corps central, forcer une ouverture, recevoir une aide extérieure ou interrompre l’invocation avant la saisie. Une force suffisante peut rompre la prise.'
+  },
+  {
+    name:'La Grande Sœur', sub:'Protection et riposte', slots:'2 emplacements · une gardienne robuste', prep:2, lifetime:'3 tours',
+    text:'Une grande protectrice d’environ 2,50 m se matérialise près d’Hinoenma. Elle oppose ses bras et son corps massif à une frappe, couvre une retraite ou frappe violemment de ses poings un adversaire qui s’approche. À chaque tour, elle choisit une intervention significative : interception OU riposte, sans cumuler plusieurs parades parfaites et attaques complètes.',
+    impact:'Défense très solide face aux attaques ordinaires de rang inférieur ; à rang égal, une technique puissante, bien placée, peut la traverser ; contre un adversaire supérieur, elle ne garantit pas le blocage. Ses coups sont physiques et contestables, pas des touches automatiques.',
+    counter:'Lenteur, angles morts, contournement, attaques successives, souffle concentré ou frappe Nichirin visant ses articulations et son tronc. Ses défenses s’usent et elle peut être détruite avant les trois tours.'
+  },
+  {
+    name:'Le Cortège du Retour', sub:'Extraction', slots:'2 emplacements · deux porteuses', prep:1, lifetime:'3 tours',
+    text:'Deux servantes de chair d’environ 1,60 m prennent ensemble un captif ou un objet encombrant et le transportent au sol, à allure réduite. Elles ne capturent pas par leur seule apparition : une saisie préalable doit réussir, puis Hinoenma cherche à couvrir la retraite.',
+    impact:'La contention du captif respecte le barème général et ne se prolonge jamais automatiquement jusqu’au terme des trois tours. Une fois libérée, la cible peut se débattre, frapper ou s’échapper ; les porteuses doivent alors tenter une nouvelle prise valide.',
+    counter:'Tailler leurs bras porteurs, déséquilibrer l’une d’elles, entraver le passage, attaquer le convoi, recevoir l’aide d’un allié. Pas de téléportation ni de fuite instantanée : le trajet est visible et contestable.'
+  },
+  {
+    name:'Les Pétales du Sacrifice', sub:'Défense ou attaque de proximité', slots:'1 emplacement · une créature sacrificielle', prep:1, lifetime:'1 action après activation',
+    text:'Une créature compacte de chair noire apparaît près d’Hinoenma et se déchire volontairement en éclats de chair durcie semblables à des pétales. En défense, ils s’interposent pour dévier ou amortir partiellement une frappe. En attaque, Hinoenma les projette dans un cône court de deux à trois mètres : leurs bords coupants peuvent lacérer une cible à portée. Il s’agit de matière bien réelle, pas d’une explosion, d’un poison ou d’une illusion.',
+    impact:'Un seul mode par invocation : protection OU salve offensive. La dispersion s’effectue sur une action, puis les fragments perdent leur force et se désintègrent. Les dégâts éventuels sont physiques et dépendent du contact réellement obtenu.',
+    counter:'Esquive latérale, couverture, lame Nichirin pour trancher les fragments, portée courte ; une attaque massive peut dépasser l’écran défensif. La créature est entièrement consommée après son usage.'
+  },
+  {
+    name:'La Veillée Noire', sub:'Tenue de position et frappe', slots:'3 emplacements · une sentinelle fixe', prep:2, lifetime:'3 tours',
+    text:'Une sentinelle d’environ 2,70 m plante ses membres dans le sol devant une issue. Elle défend la zone à portée de ses bras allongés (environ 2 à 3 m) : elle peut barrer physiquement le passage OU porter un coup lourd à quiconque s’en approche. Elle ne déplace ni murs ni bâtiments. Pendant ce temps, Hinoenma peut reculer avec sa proie.',
+    impact:'Une action défensive ou une frappe physique par tour, avec possibilité d’esquive et de riposte. Son immobilité lui donne une bonne tenue, non une invulnérabilité. Avec trois emplacements occupés, elle ne peut pas être invoquée simultanément avec le Cortège (deux emplacements).',
+    counter:'Contournement, attaque hors de la portée de ses bras, coupe des membres ancrés, attaque de zone ou technique puissante de katana sur son noyau. Elle se désintègre au plus tard après trois tours.'
+  },
+  {
+    name:'L’Adoption Forcée', sub:'Ultime manœuvre de capture', slots:'4 emplacements · quatre enfants coordonnés', prep:2, lifetime:'2 tours',
+    text:'Hinoenma rassemble quatre enfants de chair pour une seule manœuvre de capture. Deux cherchent à barrer les voies de fuite, tandis que les deux autres approchent par des angles différents pour tenter de saisir bras et jambes. Si une ouverture apparaît, les quatre resserrent leur formation afin que leur mère puisse immobiliser ou récupérer la cible. La technique est un encerclement physique, non une téléportation ou une capture automatique.',
+    impact:'Déploiement maximal : les quatre emplacements sont occupés, aucune autre invocation possible. L’ensemble exécute une manœuvre coordonnée par tour, pas quatre assauts indépendants de puissance équivalente à celle d’Hinoenma. Toute prise suit le barème général et prend fin au plus tard à la disparition des enfants.',
+    counter:'Interrompre les deux tours de préparation, briser la formation, exploiter une ouverture, frapper plusieurs enfants avec une attaque de zone ou les découper à la Nichirin. Si Hinoenma subit une blessure grave ou perd le contrôle de l’ensemble, la coordination s’effondre.'
+  }
  ];
- $('#powers-grid').innerHTML = abilities.map((a,i)=>`<article class="power-card"><div class="power-number">${String(i+1).padStart(2,'0')}</div><span class="power-class">${esc(a.sub)}</span><h3>${esc(a.name)}</h3><p class="summon-time">⏳ Invocation : <b>${a.prep} ${a.prep===1?'tour':'tours'}</b></p><p>${esc(a.text)}</p><div class="power-counter"><b>${esc(a.slots)}</b><br><b>Contre-jeu :</b> ${esc(a.counter)}</div></article>`).join('');
+ $('#powers-grid').innerHTML = abilities.map((a,i)=>`<article class="power-card"><div class="power-number">${String(i+1).padStart(2,'0')}</div><span class="power-class">${esc(a.sub)}</span><h3>${esc(a.name)}</h3><p class="summon-time">⏳ Invocation : <b>${a.prep} ${a.prep===1?'tour':'tours'}</b> <span class="power-divider">·</span>⌛ Présence : <b>${esc(a.lifetime)}</b></p><p>${esc(a.text)}</p><div class="power-impact"><b>Effet & limites :</b> ${esc(a.impact)}</div><div class="power-counter"><b>${esc(a.slots)}</b><br><b>Contre-jeu :</b> ${esc(a.counter)}</div></article>`).join('');
  const phases = [
-  ['Repérer','Les Éclaireuses reconnaissent les chemins et transmettent seulement ce qu’elles observent réellement. Un pourfendeur vigilant peut les détruire.'],
-  ['Couper les issues','Les Deux Sœurs prennent position pour réduire les chemins de fuite. Rien n’empêche l’adversaire de forcer un passage ou de surprendre Hinoenma.'],
-  ['Tenter l’étreinte','Le Berceau d’Épines essaye de saisir une cible. Le joueur adverse garde le droit de réagir, de rompre la prise ou de couper l’invocation.'],
-  ['Emporter','Le Cortège du Retour tente une extraction physique. Le groupe est visible, vulnérable, et sa progression ralentit avec le poids du captif.'],
-  ['Protéger la retraite','La Grande Sœur peut intercepter une frappe, mais ses limites et le nombre total de créations empêchent de tout faire à la fois. La réussite dépend de la scène RP.']
+  ['Repérer','Les Éclaireuses (6 tours) explorent les chemins puis reviennent communiquer par gestes et petits sons. Elles peuvent être repérées ou détruites avant leur retour.'],
+  ['Couper les issues','Les Deux Sœurs (3 tours) feintent et attaquent de concert pour réduire les issues. Un large mouvement de katana peut briser leur formation.'],
+  ['Tenter l’étreinte','Le Berceau d’Épines (2 tours) cherche une prise physique sur une cible déjà affaiblie. Le maintien est limité par le barème d’entrave et peut être brisé.'],
+  ['Emporter','Le Cortège du Retour (3 tours) transporte un captif saisi au préalable : il reste visible, lent et attaquable. La contention ne dépasse pas le barème général.'],
+  ['Protéger la retraite','La Grande Sœur peut intercepter une frappe ou riposter au contact, sans parer toutes les attaques. La réussite de l’extraction dépend de la scène RP.']
  ];
  let phase=0;
  function renderPhase(){ $('#gameplay-num').textContent=`${String(phase+1).padStart(2,'0')} / 05`;$('#gameplay-step-title').textContent=phases[phase][0];$('#gameplay-step-body').textContent=phases[phase][1];$('#gameplay-prev').disabled=phase===0;$('#gameplay-next').textContent=phase===4?'Recommencer ↻':'Étape suivante →'; }
  $('#gameplay-prev').addEventListener('click',()=>{phase=Math.max(0,phase-1);renderPhase()});
  $('#gameplay-next').addEventListener('click',()=>{phase=(phase+1)%phases.length;renderPhase()});renderPhase();
- let jokes=['📦 Livraison confirmée : Frite a refusé de signer le bon de réception.','🩸 Hinoenma : « Ce n’est pas un enlèvement, c’est une adoption surprise ! »','🚨 Alerte staff : tentative de kidnapping de Frite détectée. Validation refusée par les lois de la physique RP.','🌸 Frite a fui. Les poupées ont rapporté une frite en carton. Hinoenma est inconsolable.'];let j=0;
+ let jokes=['📦 Livraison confirmée : Frite a refusé de signer le bon de réception.','🩸 Hinoenma : « Ce n’est pas un enlèvement, c’est une adoption surprise ! »','✅ AUTORISATION EXCEPTIONNELLE ACCORDÉE PAR FRITE LUI-MÊME. Le kidnapping est désormais une affaire de famille !','🌸 Frite a fui. Les poupées ont rapporté une frite en carton. Hinoenma est inconsolable.'];let j=0;
  $('#frite-button').addEventListener('click',()=>{$('#frite-output').textContent=jokes[j++%jokes.length]});
 
  const captions = {1:'Deux êtres, une obsession',2:'Je te veux',3:'Je vous veux, TOUS !',4:'Mon seigneur ?',5:'Une lumière nouvelle',6:'La naissance de la famille',7:'L’éternité entre les mains',8:'L’éclat d’une âme',9:'L’ombre sous la pluie',10:'Je t’ai retrouvée',11:'Tu ne m’échapperas plus',12:'Deux siècles à conquérir la nuit',13:'Chaînes et souvenirs',14:'La beauté monstrueuse',15:'Automne — Hino',16:'Le sacrifice — Hino',17:'L’insouciance — Hino',18:'La révélation — Muzan',19:'Le seigneur Saionji Takamasa'};
