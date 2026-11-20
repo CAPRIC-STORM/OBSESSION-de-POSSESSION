@@ -83,7 +83,7 @@
   {
     name:'Les Petites Mains', sub:'Interception', slots:'1 emplacement · une poupée agile', prep:1,
     text:'Cette poupée de 50 cm court, bondit sur les obstacles et se jette au contact. Elle cherche une cheville au moment d’une esquive, un poignet pendant une frappe ou le bras qui tient le sabre. Ses griffes peuvent aussi entailler une cible trop occupée à surveiller Hinoenma.',
-    impact:'Sur un mouvement bref, elle peut rivaliser avec la vivacité de sa mère. Une prise réussie perturbe le geste visé et suit le barème d’entrave ; lorsque cette durée s’achève, la poupée reste présente et doit tenter une nouvelle saisie si elle veut retenir la cible à nouveau.',
+    impact:'Sur un mouvement bref, elle peut rivaliser avec la vivacité de sa mère. Une prise réussie perturbe le geste visé selon le barème d’entrave. Elle ne peut retenir sa cible au-delà de sa durée d’action ou de l’effet autorisé.',
     counter:'Elle frappe vite mais ne serre pas aussi fort qu’une grande invocation. Un mouvement précis peut lui arracher sa prise ou la repousser ; sa petite carcasse résiste mal à une coupe de Nichirin.'
   },
   {

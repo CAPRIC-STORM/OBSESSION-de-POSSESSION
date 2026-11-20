@@ -1,5 +1,5 @@
 {
-  "release": "V7-f854f74eab82",
+  "release": "V7-e144d6a61e3a",
   "files": {
     "assets/audio/theme-changgwi-inst.mp3": "1b381c568915",
     "assets/audio/theme-changgwi.mp3": "a5802a1a69f2",
@@ -33,6 +33,6 @@
     "assets/images/Tsubaki.jpg": "e46ad4f4617f",
     "style.css": "fc1e478d33ad",
     "chapters.js": "175f137d4d9c",
-    "app.js": "87272c5c9275"
+    "app.js": "80935f1b468d"
   }
 }
