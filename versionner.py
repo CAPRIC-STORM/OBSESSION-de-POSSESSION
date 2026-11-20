@@ -66,12 +66,15 @@ def main() -> None:
 
     css_hash = digest(CSS)
     js_hashes = {p.name: digest(p) for p in JS_FILES}
-    release_material = json.dumps({"assets": hashes, "css": css_hash, "js": js_hashes}, sort_keys=True)
+    # Les changements du texte HTML (fiche, blague, etc.) font aussi évoluer
+    # la version du site, sans dépendre des anciennes balises de version.
+    html = clean_index(INDEX.read_text(encoding="utf-8"))
+    html_hash = hashlib.sha256(html.encode("utf-8")).hexdigest()[:12]
+    release_material = json.dumps({"assets": hashes, "css": css_hash, "js": js_hashes, "html": html_hash}, sort_keys=True)
     release = hashlib.sha256(release_material.encode()).hexdigest()[:12]
 
     # L'index est regénéré à partir de sa version normalisée pour éviter
     # de multiplier les ?v= à chaque nouvelle exécution.
-    html = clean_index(INDEX.read_text(encoding="utf-8"))
     html = stamp_assets(html, hashes)
     for file_name, file_hash in [("style.css", css_hash), *js_hashes.items()]:
         html = html.replace(f'href="{file_name}"', f'href="{file_name}?v={file_hash}"')
